@@ -1,17 +1,22 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Login from '../components/Login.vue'
-import Home from '../components/Home.vue'
-import Welcome from '../components/Welcome.vue'
-import Users from '../components/user/Users.vue'
-import Rights from '../components/power/Rights.vue'
-import Roles from '../components/power/Roles'
-import Cate from '../components/goods/Cate'
-import Params from '../components/goods/Params'
-import GoodsList from '../components/goods/List.vue'
-import AddGoods from '../components/goods/Add.vue'
-import Order from '../components/order/Order'
-import Report from '@/components/report/Report'
+
+const Login = () => import(/* webpackChunkName: "login_home_welcome" */ '../components/Login.vue')
+const Home = () => import(/* webpackChunkName: "login_home_welcome" */ '../components/Home.vue')
+const Welcome = () => import(/* webpackChunkName: "login_home_welcome" */ '../components/Welcome.vue')
+
+const Users = () => import(/* webpackChunkName: "Users_Rights_Roles" */ '../components/user/Users.vue')
+const Rights = () => import(/* webpackChunkName: "Users_Rights_Roles" */ '../components/power/Rights.vue')
+const Roles = () => import(/* webpackChunkName: "Users_Rights_Roles" */ '../components/power/Roles')
+
+const Cate = () => import(/* webpackChunkName: "Cate_Params" */ '../components/goods/Cate')
+const Params = () => import(/* webpackChunkName: "Cate_Params" */ '../components/goods/Params')
+
+const GoodsList = () => import(/* webpackChunkName: "GoodsList_AddGoods" */ '../components/goods/List.vue')
+const AddGoods = () => import(/* webpackChunkName: "GoodsList_AddGoods" */ '../components/goods/Add.vue')
+
+const Order = () => import(/* webpackChunkName: "Order_Report" */ '../components/order/Order')
+const Report = () => import(/* webpackChunkName: "Order_Report" */ '../components/report/Report')
 
 Vue.use(VueRouter)
 
@@ -29,47 +34,46 @@ const routes = [
     path: '/home',
     component: Home,
     redirect: '/welcome',
-    children: [
-      {
-        path: '/welcome',
-        component: Welcome
-      },
-      {
-        path: '/users',
-        component: Users
-      },
-      {
-        path: '/rights',
-        component: Rights
-      },
-      {
-        path: '/roles',
-        component: Roles
-      },
-      {
-        path: '/categories',
-        component: Cate
-      },
-      {
-        path: '/params',
-        component: Params
-      },
-      {
-        path: '/goods',
-        component: GoodsList
-      },
-      {
-        path: '/goods/add',
-        component: AddGoods
-      },
-      {
-        path: '/orders',
-        component: Order
-      },
-      {
-        path: '/reports',
-        component: Report
-      }
+    children: [{
+      path: '/welcome',
+      component: Welcome
+    },
+    {
+      path: '/users',
+      component: Users
+    },
+    {
+      path: '/rights',
+      component: Rights
+    },
+    {
+      path: '/roles',
+      component: Roles
+    },
+    {
+      path: '/categories',
+      component: Cate
+    },
+    {
+      path: '/params',
+      component: Params
+    },
+    {
+      path: '/goods',
+      component: GoodsList
+    },
+    {
+      path: '/goods/add',
+      component: AddGoods
+    },
+    {
+      path: '/orders',
+      component: Order
+    },
+    {
+      path: '/reports',
+      component: Report
+    }
     ]
   }
 ]

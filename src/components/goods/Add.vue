@@ -197,7 +197,7 @@ export default {
       // 静态属性参数列表
       onlyTableData: [],
       // 上传图片的API地址
-      upLoadURL: 'http://127.0.0.1:8888/api/private/v1/upload',
+      upLoadURL: 'http://47.96.17.139:3001/api/private/v1/upload',
       // 图片上传的headers请求头对象
       headerObj: {
         Authorization: window.sessionStorage.getItem('token')
